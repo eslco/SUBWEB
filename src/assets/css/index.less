@@ -11,9 +11,9 @@ body {
         z-index: 1;
 
         svg {
+            fill: #ae8675;
+            fill: var(--theme-color, #3661be);
             color: #fff;
-            fill: #5fb878;
-            fill: var(--theme-color, #5fb878);
             height: 80px;
             width: 80px;
         }
@@ -43,7 +43,7 @@ body {
 
     .layui-form-label.required:before {
         content: '* ';
-        color: red;
+        color: #db5073da;
     }
 
     .layui-input-block,
@@ -56,7 +56,7 @@ body {
     }
 
     .button {
-        background-color: #5fb878;
+        background-color: #BA8965;
     }
 
     .form-footer {
@@ -75,7 +75,7 @@ body {
             border-radius: 2px;
             
             &:hover {
-                border-color: #5fb878;
+                border-color: #BA8965;
             }
         }
     }
@@ -90,7 +90,5 @@ body {
         .layui-form-label {
             text-align: right;
         }
-        
-        // ... other RTL specific styles ...
     }
 }
