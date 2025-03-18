@@ -9,11 +9,22 @@
     <link href="https://unpkg.com/layui@2.7.6/dist/css/layui.css" rel="stylesheet">
     <script src="https://unpkg.com/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://unpkg.com/layui@2.7.6/dist/layui.js"></script>
-    <title>CM订阅转换</title>
+    <title>ESL-SUB-CONVERT</title>
+    <style>
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 100px;
+        }
+        [dir="rtl"] .language-selector {
+            left: 100px;
+            right: auto;
+        }
+    </style>
 </head>
 
 <body>
-    <a href="https://github.com/cmliu/SUBWEB" target="_blank" class="github-corner"
+    <a href="https://github.com/eslco/SUBWEB" target="_blank" class="github-corner"
         aria-label="View source on Github"><svg viewBox="0 0 250 250" aria-hidden="true">
             <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
             <path
@@ -24,24 +35,24 @@
                 fill="currentColor" class="octo-body"></path>
         </svg></a>
     <header>
-        <h1>CM订阅转换</h1>
+        <h1 data-i18n="title">ESL-SubWEB</h1>
     </header>
     <div class="layui-form form" lay-filter="optionsForm">
         <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label required">原订阅链接:</label>
+            <label class="layui-form-label required" data-i18n="originalUrl">原订阅链接:</label>
             <div class="layui-input-block">
                 <textarea name="url" lay-filter="url" required lay-verify="required"
                     placeholder="支持订阅或ss/ssr/vmess链接，多个链接每行一个或用 | 分隔" class="layui-textarea"></textarea>
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label required">客户端类型:</label>
+            <label class="layui-form-label required" data-i18n="clientType">客户端类型:</label>
             <div class="layui-input-block">
                 <select name="target" id="targetSelecter" required lay-verify="required" lay-filter="target"></select>
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">外部配置:</label>
+            <label class="layui-form-label" data-i18n="externalConfig">外部配置:</label>
             <div class="layui-input-block">
                 <select name="config" id="configSelecter" lay-filter="config">
                     <option value="">不选择，由接口提供方提供</option>
@@ -49,23 +60,23 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label required">后端地址:</label>
+            <label class="layui-form-label required" data-i18n="backendUrl">后端地址:</label>
             <div class="layui-input-block">
                 <select name="backend" id="backendSelecter" required lay-verify="required"
                     lay-filter="backend"></select>
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">包含关键字:</label>
+            <label class="layui-form-label" data-i18n="includeKeywords">Include|包含关键字:</label>
             <div class="layui-input-block">
-                <input type="text" name="include" lay-filter="include" placeholder="节点名包含的关键字，支持正则" autocomplete="off"
+                <input type="text" name="include" lay-filter="include" placeholder="节点名包含的关键字，支持正则Regexp" autocomplete="off"
                     class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">排除关键字:</label>
+            <label class="layui-form-label" data-i18n="excludeKeywords">Exclude|排除关键字:</label>
             <div class="layui-input-block">
-                <input type="text" name="exclude" lay-filter="exclude" placeholder="节点名不包含的关键字，支持正则" autocomplete="off"
+                <input type="text" name="exclude" lay-filter="exclude" placeholder="节点名不包含的关键字，支持正则Regexp" autocomplete="off"
                     class="layui-input">
             </div>
         </div>
@@ -141,7 +152,7 @@
         </div>
         <div class="layui-form-item form-footer">
             <div class="layui-input-block">
-                <button class="layui-btn button" lay-submit lay-filter="generate">生成新订阅链接</button>
+                <button class="layui-btn button" lay-submit lay-filter="generate">生成新的订阅链接</button>
                 <button class="layui-btn button" id="importToClash">一键导入Clash</button>
             </div>
         </div>
@@ -149,9 +160,9 @@
     <hr>
     <div class="form">
         <div class="layui-form-item layui-form-text result">
-            <label class="layui-form-label">新订阅链接:</label>
+            <label class="layui-form-label">转换后的订阅链接|New SUB URL:</label>
             <div class="layui-input-block">
-                <textarea id="result" placeholder="新的订阅链接将显示在这里" class="layui-textarea"></textarea>
+                <textarea id="result" placeholder="转换后的订阅链接将显示在这里|The converted subscription link will be displayed here" class="layui-textarea"></textarea>
             </div>
         </div>
     </div>

@@ -67,4 +67,30 @@ body {
             margin: 0;
         }
     }
+
+    .language-selector {
+        select {
+            padding: 5px;
+            border: 1px solid #e6e6e6;
+            border-radius: 2px;
+            
+            &:hover {
+                border-color: #5fb878;
+            }
+        }
+    }
+
+    // RTL support
+    [dir="rtl"] & {
+        .layui-input-block {
+            margin-right: 100px;
+            margin-left: 0;
+        }
+        
+        .layui-form-label {
+            text-align: right;
+        }
+        
+        // ... other RTL specific styles ...
+    }
 }

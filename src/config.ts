@@ -2,13 +2,13 @@ export const targetConfig = [{
     label: 'Clash',
     value: 'clash'
 }, {
-    label: 'Clash新参数',
+    label: 'Clash New',
     value: 'clash&new_name=true'
 }, {
     label: 'ClashR',
     value: 'clashr'
 }, {
-    label: 'ClashR新参数',
+    label: 'ClashR N',
     value: 'clashr&new_name=true'
 }, {
     label: '混合订阅（mixed）',
@@ -54,8 +54,17 @@ export const targetConfig = [{
     value: 'loon'
 }];
 export const backendConfig = [{
-    label: 'subapi.cmliussss.net(CM提供-负载均衡后端)',
+    label: 'sub.jwsc.eu.org(ShellCrash作者:请勿滥用)',
+    value: 'https://sub.jwsc.eu.org/sub?'
+}, {
+    label: 'subapi.es.ddns-ip.net(ES Backend)',
+    value: 'https://sub.ecos.nyc.mn/sub?'
+}, {
+    label: 'subapi.cmliussss.net(CM-负载均衡.new)',
     value: 'https://subapi.cmliussss.net/sub?'
+}, {
+    label: 'subapi.fxxk.dedyn.io(CM-负载均衡.bak)',
+    value: 'https://subapi.fxxk.dedyn.io/sub?'
 }, {
     label: 'v.id9.cc(品云提供-稳定后端)',
     value: 'https://v.id9.cc/sub?'
@@ -66,10 +75,27 @@ export const backendConfig = [{
     label: 'sub.d1.mk(肥羊提供-备用后端)',
     value: 'https://sub.d1.mk/sub?'
 }, {
-    label: 'localhost:25500(自建本地服务)',
+    label: 'localhost:25500(自建本地Local)',
     value: 'http://localhost:25500/sub?'
 }];
 export const externalConfig = [{
+    label: 'ESL-RULE-Github',
+    options: [{
+        label: 'Online_MultiCountry(ESL-selfuse)',
+        value: 'https://raw.githubusercontent.com/eslco/ACL4SSR/master/Clash/config/ES_Online_MultiCountry.ini'
+    },{
+        label: 'ESL-Online_MultiCountry(Github)',
+        value: 'https://raw.githubusercontent.com/eslco/ACL4SSR/master/Clash/config/ACL4SSR_Online_MultiCountry.ini'
+    },{
+        label: 'ESL-Online_MultiMode(Github)',
+        value: 'https://raw.githubusercontent.com/eslco/ACL4SSR/master/Clash/config/ACL4SSR_Online_MultiMode.ini'
+    
+    },{
+        label: 'ESL-Online_Full_Country(Github)',
+        value: 'https://raw.githubusercontent.com/eslco/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_Country.ini'
+    
+    }]
+},{
     label: 'CM规则',
     options: [{
         label: 'CM_Online 默认版 识别港美地区(与Github同步)',
