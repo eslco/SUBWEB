@@ -30,4 +30,4 @@ web页面都是只提供参数拼接，工作十分简单，参数详见[subconv
 
 ## 自定义
 
-后端参数很多，页面只提供了少部分常用的，如果有需求，可能需要修改`src/config.ts`中的选项配置，并修改`src/index.ts`中的`generateSubUrl`函数(都是傻瓜式的工作)
+后端参数很多，页面只提供了少部分常用的，如果有需求，可能需要修改`src/config.ts`中的选项配置，并修改`src/index.ts`中的`generateSubUrl`函数(都是简单的工作)
